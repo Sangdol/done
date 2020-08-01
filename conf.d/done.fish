@@ -201,7 +201,6 @@ if set -q __done_enabled
 
         if test $cmd_duration
             and test $cmd_duration -gt $__done_min_cmd_duration # longer than notify_duration
-            and not __done_is_process_window_focused # process pane or window not focused
             and not string match -qr $__done_exclude $history[1] # don't notify on git commands which might wait external editor
 
             # Store duration of last command
